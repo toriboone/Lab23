@@ -1,0 +1,49 @@
+﻿@model Lab20.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<form name="Reg" onsubmit="return ValidateForm()" action="Success" method="post">
+    <p id="reg2"><em>First Name:</em></p>
+    <input type="text" name="FirstName" id="reg" required/>
+    <br />
+    <p id="reg2"><em>Last Name:</em></p>
+    <input type="text" name="LastName" id="reg" required/>
+    <br />
+    <p id="reg2"><em>Email:</em></p>
+    <input type="email" name="Email" id="reg" required/>
+    <br />
+    <p id="reg2"><em>Birthdate:</em></p>
+    <input type="date" name="Bday" id="reg" required/>
+    <br />
+    <p id="reg2"><em>Location:</em></p>
+    <input list="locations" name="location">
+    <datalist id="Location">
+        <option value="Grand Rapids">
+        <option value="Allendale">
+        <option value="Holland">
+        <option value="Muskegon">
+        <option value="Grand Haven">
+        <option value="Other">
+    </datalist>
+    <p id="reg2"><em>Favorite Neptune Blend:</em></p>
+    <input type="radio" name="blend" /> Seafoam Light Roast<br />
+    <input type="radio" name="blend" /> Trident Classic Roast<br />
+    <input type="radio" name="blend" /> Mariana Trench Dark Roast<br />
+    <input type="radio" name="blend" /> Coral Reef Decaf<br />
+    <p id="reg2"><em>Password:</em></p>
+    <input type="password" name="Password" id="reg" required/>
+    <br />
+    <br />
+    <input type="checkbox" name="sub" /> Subscribe to daily emails for Neptune Coffee news and deals.
+    <br />
+    <br />
+    <input type="submit" name="submit" value="Submit">
+    <input type="reset" />
+</form>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
